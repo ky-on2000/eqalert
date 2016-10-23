@@ -39,7 +39,7 @@ function get($day){
 		//curlにしたぞ
 		$html= mb_convert_encoding($html, "UTF-8", "SJIS");
 	} catch (Exception $e) {
-		die("ERROR地震情報APIへの接続に失敗しました。<br>"); 
+		die("ERROR地震情報APIへの接続に失敗しました<br>"); 
 	}
 	return $html;
 }
