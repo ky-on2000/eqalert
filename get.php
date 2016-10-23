@@ -27,7 +27,7 @@ $shingenD[]=array_filter(array_count_values($shingen),'filter');
 //print_r($alldata);
 //print_r($shingen);
 function get($day){
-	$url = "http://p2pquake.ddo.jp/p2pquake/api_userquake.pl?date=${day}";
+	$url = "http://api.p2pquake.com/v1/userquake?date=${day}";
 	try {
 	$cache=phpfastcache();
 	$html= $cache->get($url);
