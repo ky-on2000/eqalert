@@ -1,6 +1,5 @@
 <?php
 header("Content-Type: text/html; charset=UTF-8");
-require_once(__DIR__.'/cache/phpfastcache.php');
 phpfastcache::setup("storage","auto");
 for($i=4;$i>=0;$i-=1){
 	$data[$i]=get(date("Y/m/d",strtotime("-${i} day")));
@@ -21,9 +20,9 @@ for($m=0;$m<$number;$m++){
 }
 $shingenD[]=array_filter(array_count_values($shingen),'filter');
 //デバッグ用
-print_r($shingenD);
-print_r($shingen);
-print_r($alldata);
+//print_r($shingenD);
+//print_r($shingen);
+//print_r($alldata);
 function get($day){
 	$url = "http://api.p2pquake.com/v1/userquake?date=${day}";
 	try {
