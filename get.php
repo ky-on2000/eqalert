@@ -24,15 +24,14 @@ $shingenD[]=array_filter(array_count_values($shingen),'filter');
 print_r($shingenD);
 print_r($shingen);
 print_r($alldata);
-print_r($shingen);
 function get($day){
 	$url = "http://api.p2pquake.com/v1/userquake?date=${day}";
-	print $url;
 	try {
-		$cache=phpfastcache();
-		$html=$cache->get($url);
+		//$cache=phpfastcache();
+		//$html=$cache->get($url);
+		$html="";
 		print "なす！";
-		if ($html==false) {
+		//if ($html==false) {
 			//$html = file_get_contents($url, false, NULL);
 			print "ばーか";
 			//curlにしますか
@@ -45,13 +44,13 @@ function get($day){
 			curl_close($ch);
 			//curlにしたぞ
 			$html= mb_convert_encoding($html, "UTF-8", "SJIS");
-			if($html!==false) {
+			/*if($html!==false) {
 				$cache->set($url,$html,60);
 				}
 			else {
 				die("エラー地震情報APIへの接続に失敗しました<br>");
-				}
-		}
+				}*/
+		//}
 	} catch (Exception $e) {
 		die("ERROR地震情報APIへの接続に失敗しました。<br>"); 
 	}
