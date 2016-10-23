@@ -11,7 +11,7 @@ $o=count($shingenD);
 while($o!==0){
 	$o-=1;
 	foreach($shingenD[$o] as $key=>$value){
-		tweet('【注意】'.$key.'を震源とする地震がこの5日間で'.$value.'回発生しています。念のため地震や火山に注意してください。',$ck,$cs,$at,$as);
+		tweet('【注意】'.$key.'を震源とする地震がこの5日間で'.$value.'回発生しています。念のため地震や火山活動に注意してください。',$ck,$cs,$at,$as);
 		file_put_contents("date.txt",date("Y/m/d"));
 	}
 }
