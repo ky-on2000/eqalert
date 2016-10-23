@@ -1,5 +1,4 @@
 <?php
-date_default_timezone_set('Asia/Tokyo');
 header("Content-Type: text/html; charset=UTF-8");
 require_once(__DIR__.'/cache/phpfastcache.php');
 phpfastcache::setup("storage","auto");
@@ -30,7 +29,7 @@ function get($day){
 	$url = "http://api.p2pquake.com/v1/userquake?date=${day}";
 	try {
 	$cache=phpfastcache();
-	$html= $cache->get($url);
+	$html=$cache->get($url);
     if ($html==false) {
       //$html = file_get_contents($url, false, NULL);
 	  //curlにしますか

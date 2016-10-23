@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Tokyo');
 require __DIR__.'/get.php';
 require __DIR__.'/twitteroauth/autoload.php';
 use Abraham\TwitterOAuth\TwitterOAuth;
