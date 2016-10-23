@@ -15,7 +15,7 @@ while($o!==0){
 		file_put_contents("date.txt",date("Y/m/d"));
 	}
 }
-if(date("Y/m/d",strtotime("-1 day"))==file_get_contents("date.txt")){
+if(file_get_contents("date.txt")=="2016/10/18"){
 	tweet(date(Y年m月d日).'現在、群発地震は起きていません。',$ck,$cs,$at,$as);
 	file_put_contents("date.txt",date("Y/m/d"));
 }
