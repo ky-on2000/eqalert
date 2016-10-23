@@ -32,7 +32,16 @@ function get($day){
 	$cache=phpfastcache();
 	$html= $cache->get($url);
     if ($html==false) {
-      $html = file_get_contents($url, false, NULL);
+      //$html = file_get_contents($url, false, NULL);
+	  //curlにしますか
+	  $ch=curl_init();
+	  curl_setopt($ch,CURLOPT_URL,$url);
+	  curl_setopt($ch,CURLOPT_HEADER,FALSE);
+	  curl_setopt($ch,CURLOPT_RETURNTRANSFER,TRUE);
+	  curl_setopt($ch,CURLOPT_FOLLOWLOCATION,TRUE);
+	  $html=curl_exec($ch);
+	  curl_close($ch);
+	  //curlにしたぞ
 	  $html= mb_convert_encoding($html, "UTF-8", "SJIS");
       if($html!==false) {
 		$cache->set($url,$html,60);
