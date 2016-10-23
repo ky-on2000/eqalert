@@ -1,6 +1,6 @@
 <?php
 header("Content-Type: text/html; charset=UTF-8");
-phpfastcache::setup("storage","auto");
+//phpfastcache::setup("storage","auto");
 for($i=4;$i>=0;$i-=1){
 	$data[$i]=get(date("Y/m/d",strtotime("-${i} day")));
 }
