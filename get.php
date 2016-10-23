@@ -27,6 +27,7 @@ print_r($alldata);
 print_r($shingen);
 function get($day){
 	$url = "http://api.p2pquake.com/v1/userquake?date=${day}";
+	print "タコ";
 	try {
 		$cache=phpfastcache();
 		$html=$cache->get($url);
