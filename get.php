@@ -23,7 +23,7 @@ for($m=0;$m<$number;$m++){
 $shingenD[]=array_filter(array_count_values($shingen),'filter');
 //デバッグ用
 print_r($shingenD);
-print_r($shingen5);
+print_r($shingen);
 print_r($alldata);
 print_r($shingen);
 function get($day){
