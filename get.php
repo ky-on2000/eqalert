@@ -22,10 +22,10 @@ for($m=0;$m<$number;$m++){
 }
 $shingenD[]=array_filter(array_count_values($shingen),'filter');
 //デバッグ用
-//print_r($shingenD);
-//print_r($shingen5);
-//print_r($alldata);
-//print_r($shingen);
+print_r($shingenD);
+print_r($shingen5);
+print_r($alldata);
+print_r($shingen);
 function get($day){
 	$url = "http://api.p2pquake.com/v1/userquake?date=${day}";
 	try {
