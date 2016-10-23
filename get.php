@@ -28,27 +28,29 @@ print_r($shingen);
 function get($day){
 	$url = "http://api.p2pquake.com/v1/userquake?date=${day}";
 	try {
-	$cache=phpfastcache();
-	$html=$cache->get($url);
-    if ($html==false) {
-      //$html = file_get_contents($url, false, NULL);
-	  //curlにしますか
-	  $ch=curl_init();
-	  curl_setopt($ch,CURLOPT_URL,$url);
-	  curl_setopt($ch,CURLOPT_HEADER,FALSE);
-	  curl_setopt($ch,CURLOPT_RETURNTRANSFER,TRUE);
-	  curl_setopt($ch,CURLOPT_FOLLOWLOCATION,TRUE);
-	  $html=curl_exec($ch);
-	  curl_close($ch);
-	  //curlにしたぞ
-	  $html= mb_convert_encoding($html, "UTF-8", "SJIS");
-      if($html!==false) {
-		$cache->set($url,$html,60);
-      }
-      else {
-		  die("エラー地震情報APIへの接続に失敗しました<br>");
-      }
-	}
+		$cache=phpfastcache();
+		$html=$cache->get($url);
+		print "なす！";
+		if ($html==false) {
+			//$html = file_get_contents($url, false, NULL);
+			print "ばーか";
+			//curlにしますか
+			$ch=curl_init();
+			curl_setopt($ch,CURLOPT_URL,$url);
+			curl_setopt($ch,CURLOPT_HEADER,FALSE);
+			curl_setopt($ch,CURLOPT_RETURNTRANSFER,TRUE);
+			curl_setopt($ch,CURLOPT_FOLLOWLOCATION,TRUE);
+			$html=curl_exec($ch);
+			curl_close($ch);
+			//curlにしたぞ
+			$html= mb_convert_encoding($html, "UTF-8", "SJIS");
+			if($html!==false) {
+				$cache->set($url,$html,60);
+				}
+			else {
+				die("エラー地震情報APIへの接続に失敗しました<br>");
+				}
+		}
 	} catch (Exception $e) {
 		die("ERROR地震情報APIへの接続に失敗しました。<br>"); 
 	}
