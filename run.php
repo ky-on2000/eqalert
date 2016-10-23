@@ -8,16 +8,19 @@ $cs="Xx5xl6gmSDR9bIcrgVtXWgITGdzJpFWPV1o7uu8J79JNHF8Tyh";
 $at="4712110981-dwS1v92kSeBzJPbueIwbkIOYBFdZfcgnjlATDxm";
 $as="oAnyxfWvPgG5QXobSeIa3lxHz54ROYKPUFm5HBeAFVU5Z";
 $o=count($shingenD);
-while($o!==0){
-	$o-=1;
-	foreach($shingenD[$o] as $key=>$value){
-		tweet('【注意】'.$key.'を震源とする地震がこの5日間で'.$value.'回発生しています。念のため地震や火山活動に注意してください。',$ck,$cs,$at,$as);
-		file_put_contents("date.txt",date("Y/m/d"));
-	}
-}
 if(file_get_contents("date.txt")=="2016/10/18"){
-	tweet(date(Y年m月d日).'現在、群発地震は起きていません。',$ck,$cs,$at,$as);
-	file_put_contents("date.txt",date("Y/m/d"));
+	if($o==0){
+		tweet(date(Y年m月d日).'現在、群発地震は起きていません。',$ck,$cs,$at,$as);
+		file_put_contents("date.txt",date("Y/m/d"));
+	}else{
+		while($o!==0){
+			$o-=1;
+			foreach($shingenD[$o] as $key=>$value){
+				tweet('【注意】'.$key.'を震源とする地震がこの5日間で'.$value.'回発生しています。念のため地震や火山活動に注意してください。',$ck,$cs,$at,$as);
+				file_put_contents("date.txt",date("Y/m/d"));
+			}
+		}
+	}
 }
 function tweet($message,$ck,$cs,$at,$as){
 try{
