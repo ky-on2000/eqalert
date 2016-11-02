@@ -4,10 +4,10 @@ ini_set('display_errors', '1');
 require __DIR__.'/get.php';
 require __DIR__.'/twitteroauth/autoload.php';
 use Abraham\TwitterOAuth\TwitterOAuth;
-$ck="HYxUUsHqmLEJZIlJs7rO8j01e";
-$cs="Xx5xl6gmSDR9bIcrgVtXWgITGdzJpFWPV1o7uu8J79JNHF8Tyh";
-$at="4712110981-dwS1v92kSeBzJPbueIwbkIOYBFdZfcgnjlATDxm";
-$as="oAnyxfWvPgG5QXobSeIa3lxHz54ROYKPUFm5HBeAFVU5Z";
+$ck="**********";
+$cs="**********";
+$at="**********";
+$as="**********";
 $o=count($shingenD);
 $check=file_get_contents("date.txt");
 if($check="2016/10/18"){
