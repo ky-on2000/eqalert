@@ -21,6 +21,8 @@ if(file_get_contents("date.txt")=="2016/10/18"){
 			}
 		}
 	}
+}else{
+	echo "えらー";
 }
 function tweet($message,$ck,$cs,$at,$as){
 try{
