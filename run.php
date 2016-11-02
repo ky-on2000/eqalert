@@ -9,7 +9,8 @@ $cs="Xx5xl6gmSDR9bIcrgVtXWgITGdzJpFWPV1o7uu8J79JNHF8Tyh";
 $at="4712110981-dwS1v92kSeBzJPbueIwbkIOYBFdZfcgnjlATDxm";
 $as="oAnyxfWvPgG5QXobSeIa3lxHz54ROYKPUFm5HBeAFVU5Z";
 $o=count($shingenD);
-if(file_get_contents("date.txt")="2016/10/18"){
+$check=file_get_contents("date.txt");
+if($check="2016/10/18"){
 	if($o==0){
 		tweet(date(Y年m月d日).'現在、群発地震は起きていません。',$ck,$cs,$at,$as);
 		file_put_contents("date.txt",date("Y/m/d"));
