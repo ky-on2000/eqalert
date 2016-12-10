@@ -4,10 +4,10 @@ ini_set('display_errors', '1');
 require __DIR__.'/get.php';
 require __DIR__.'/twitteroauth/autoload.php';
 use Abraham\TwitterOAuth\TwitterOAuth;
-$ck="*****";
-$cs="*****";
-$at="*****";
-$as="*****";
+$ck="HYxUUsHqmLEJZIlJs7rO8j01e";
+$cs="Xx5xl6gmSDR9bIcrgVtXWgITGdzJpFWPV1o7uu8J79JNHF8Tyh";
+$at="4712110981-dwS1v92kSeBzJPbueIwbkIOYBFdZfcgnjlATDxm";
+$as="oAnyxfWvPgG5QXobSeIa3lxHz54ROYKPUFm5HBeAFVU5Z";
 $o=count($shingenD);
 $check=file_get_contents("date.txt");
 if($check="2016/10/18"){
@@ -18,7 +18,7 @@ if($check="2016/10/18"){
 		while($o!==0){
 			$o-=1;
 			foreach($shingenD[$o] as $key=>$value){
-				tweet('【注意】'.$key.'を震源とする地震がこの5日間で'.$value.'回発生しています。念のため地震や火山活動に注意してください。#地震',$ck,$cs,$at,$as);
+				tweet('【注意】'.$key.'を震源とする地震がこの5日間で'.$value.'回発生しています。念のため地震や火山活動に注意してください。#地震 #群発地震',$ck,$cs,$at,$as);
 				file_put_contents("date.txt",date("Y/m/d"));
 			}
 		}
